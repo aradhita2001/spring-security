@@ -33,7 +33,7 @@ public class SecurityConfig {
 //                .roles("USER","ADMIN","HR")
 //                .build();
 //        return new InMemoryUserDetailsManager(admin, user);
-        //return new UserInfoUserDetailsService();
+        return new UserInfoUserDetailsService();
     }
 
     @Bean

@@ -2,6 +2,7 @@ package com.example.adg.security.controller;
 
 
 import com.example.adg.security.dto.Product;
+import com.example.adg.security.entity.UserInfo;
 import com.example.adg.security.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

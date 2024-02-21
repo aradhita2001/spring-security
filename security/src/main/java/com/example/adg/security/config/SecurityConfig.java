@@ -1,5 +1,6 @@
 package com.example.adg.security.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -20,19 +21,22 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
+    
+    PasswordEncoder encoder = new BCryptPasswordEncoder();
 
     @Bean
     //authentication
     public UserDetailsService userDetailsService() {
-//        UserDetails admin = User.withUsername("Basant")
-//                .password(encoder.encode("Pwd1"))
-//                .roles("ADMIN")
-//                .build();
-//        UserDetails user = User.withUsername("John")
-//                .password(encoder.encode("Pwd2"))
-//                .roles("USER","ADMIN","HR")
-//                .build();
-//        return new InMemoryUserDetailsManager(admin, user);
+       
+    // UserDetails admin = User.withUsername("Basant")
+    //            .password(encoder.encode("Pwd1"))
+    //            .roles("ADMIN")
+    //            .build();
+    //    UserDetails user = User.withUsername("John")
+    //            .password(encoder.encode("Pwd2"))
+    //            .roles("USER","ADMIN","HR")
+    //            .build();
+    //    return new InMemoryUserDetailsManager(admin, user);
         return new UserInfoUserDetailsService();
     }
 

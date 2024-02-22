@@ -41,13 +41,13 @@ public class ProductController {
     }
 
     @GetMapping("/all")
-    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public List<Product> getAllTheProducts() {
         return service.getProducts();
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAuthority('ROLE_USER')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public Product getProductById(@PathVariable int id) {
         return service.getProduct(id);
     }
